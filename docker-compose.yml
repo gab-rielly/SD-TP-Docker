@@ -1,0 +1,45 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "80:3001"
+    depends_on:
+      - backend
+    networks:
+      - my-network
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      - DB_URL1=mongodb://db1:27017/beerdb
+      - DB_URL2=mongodb://db2:27017/beerdb
+    depends_on:
+      - db1
+      - db2
+    ports:
+      - "3000:3000"
+    networks:
+      - my-network
+
+  db1:
+    image: mongo:latest
+    volumes:
+      - db_1:/data/db
+    networks:
+      - my-network
+
+  db2:
+    image: mongo:latest
+    volumes:
+      - db_2:/data/db
+    networks:
+      - my-network
+
+volumes:
+  db_1:
+  db_2:
+
+networks:
+  my-network:

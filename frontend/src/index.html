@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beer Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Beer Manager</h1>
+    <input type="text" id="beer-name" placeholder="Beer name">
+    <button id="add-to-db1">Add to DB1</button>
+    <button id="add-to-db2">Add to DB2</button>
+    <button id="remove-from-db1" class="remove">Remove from DB1</button>
+    <button id="remove-from-db2" class="remove">Remove from DB2</button>
+    <button id="compare-beers">Compare DB1 and DB2</button>
+
+    <h2>Beers in DB1</h2>
+    <ul id="beers-db1"></ul>
+
+    <h2>Beers in DB2</h2>
+    <ul id="beers-db2"></ul>
+
+    <h2>Comparison Result</h2>
+    <p id="comparison-result"></p>
+  </div>
+</body>
+</html>
