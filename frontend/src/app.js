@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const response = await fetch(`${apiUrl}/compare-beer?name=${nameInput.value}`);
           const result = await response.json();
       
-          // Exibe a comparação de forma detalhada
           if (result.inDb1 && result.inDb2) {
             comparisonResult.textContent = `A cerveja "${result.name}" está em ambos os bancos.`;
           } else if (result.inDb1) {
